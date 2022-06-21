@@ -4,4 +4,6 @@ module javafx_jdbc {
 	requires javafx.fxml;
 	
 	opens application to javafx.graphics, javafx.fxml;
+	
+	exports gui;
 }
