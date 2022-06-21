@@ -19,7 +19,7 @@ import model.services.DepartmentService;
 
 public class DepartmentListController implements Initializable {
 	
-	public DepartmentService service;
+	private DepartmentService service;
 	
 	@FXML
 	public Button btNew;
@@ -54,7 +54,7 @@ public class DepartmentListController implements Initializable {
 		tbViewDepartment.prefHeightProperty().bind(stage.heightProperty());
 	}
 	
-	public void updateTableViesw() {
+	public void updateTableView() {
 		if(service == null) {
 			throw new IllegalStateException("Service was null");
 		}
