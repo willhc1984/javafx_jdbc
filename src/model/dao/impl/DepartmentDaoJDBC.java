@@ -10,6 +10,8 @@ import java.util.List;
 
 import db.DB;
 import db.DbException;
+import gui.util.Alerts;
+import javafx.scene.control.Alert.AlertType;
 import model.dao.DepartmentDao;
 import model.entities.Department;
 
@@ -73,7 +75,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 			st.setInt(1, id);
 			st.executeUpdate();
 		} catch (SQLException e) {
-			throw new DbException(e.getMessage());
+			Alerts.showAlert("Error removing...", null, e.getMessage(), AlertType.ERROR);
 		}finally{
 			DB.closeStatment(st);
 		}
